@@ -101,7 +101,7 @@ share: true
     count(a, low, high, index+1, curr+a[index]);  
     count(a, low, high, index+1, curr-a[index]);  
     }
-    ```
+ ```
 3. Subsequences of string 'Vowel - Consonant'
 	```java
  import java.util.HashSet;
@@ -164,7 +164,7 @@ share: true
     }
  }
 
-	```
+ ```
 4. Election Winner
 	```java
 	// Java program to find winner in an election.
@@ -221,7 +221,7 @@ share: true
 		findWinner(votes);
 	}
  }
-    ```
+ ```
 5. Min pan cakes
 	``` python
 	def count(n,m):  
