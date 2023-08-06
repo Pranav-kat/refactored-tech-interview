@@ -101,9 +101,9 @@ share: true
     count(a, low, high, index+1, curr+a[index]);  
     count(a, low, high, index+1, curr-a[index]);  
     }
- ```
+  ```
 3. Subsequences of string 'Vowel - Consonant'
-	```java
+ ```java
  import java.util.HashSet;
  public class Subsequence {
     // Set to store all the subsequences
@@ -163,10 +163,9 @@ share: true
         System.out.println(st);
     }
  }
-
  ```
 4. Election Winner
-	```java
+ ```java
 	// Java program to find winner in an election.
  import java.util.*;
  public class ElectoralVotingBallot {
@@ -223,7 +222,7 @@ share: true
  }
  ```
 5. Min pan cakes
-	``` python
+   ``` python
 	def count(n,m):  
 		arr = [0]*n  
         i=0  
@@ -250,7 +249,7 @@ share: true
 	     return maxRowIndex
 	```
 7. Set Matrix zeroes
-	 ```java
+ ```java
      public class Solution {
  public void setZeroes(ArrayList<ArrayList<Integer>> a) {
  int row = a.size();
