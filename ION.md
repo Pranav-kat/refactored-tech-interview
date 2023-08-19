@@ -56,3 +56,60 @@ A hash function takes an input (or 'message') and returns a fixed-size string of
 In data structures like hash tables, hash codes are used to index and quickly retrieve data. Collisions, which occur when two different inputs produce the same hash value, are a common concern when designing hash functions. Techniques like chaining or open addressing are used to handle collisions.
 
 ---
+An immutable class in Java is a class whose instances cannot be modified after they are created. This ensures that the state of the object remains constant throughout its lifetime. To create an immutable class, follow these key principles:
+
+1. Make the class `final` to prevent inheritance, as subclasses could potentially introduce mutable behavior.
+2. Declare all fields as `final` to make them unmodifiable after object creation.
+3. Initialize all fields through the constructor.
+4. Avoid providing any setter methods.
+5. Do not expose mutable objects or references to mutable objects.
+
+Here's an example of an immutable class in Java:
+
+```java
+public final class ImmutablePerson {
+    private final String name;
+    private final int age;
+
+    public ImmutablePerson(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+```
+
+In this example, the `ImmutablePerson` class is immutable because its fields are declared as `final`, and it provides only getter methods to access the values. Once an instance of `ImmutablePerson` is created, its state cannot be changed.
+
+Usage of the `ImmutablePerson` class:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        ImmutablePerson person = new ImmutablePerson("Alice", 30);
+        
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+        
+        // Trying to modify the object (which is not possible)
+        // person.setName("Bob"); // This will not compile
+        
+        // Creating a new instance with different values
+        ImmutablePerson newPerson = new ImmutablePerson("Bob", 25);
+        
+        System.out.println("Name (new): " + newPerson.getName());
+        System.out.println("Age (new): " + newPerson.getAge());
+    }
+}
+```
+
+Remember that in an immutable class, you're essentially creating a new object whenever you want to change a property. This can be memory-intensive, so immutability should be chosen based on the requirements of your program.
+
+Also, note that if your class contains mutable objects (like collections), you need to ensure that they are either not exposed publicly or that their modifications are properly managed to maintain the immutability of the class.
