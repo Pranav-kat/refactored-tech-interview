@@ -288,6 +288,34 @@ Remember that the `PriorityQueue` class is a min-heap implementation, meaning el
 
 These are some of the basic methods and usage patterns of the `PriorityQueue` class in Java. You can explore additional methods and features in the official Java documentation for the `PriorityQueue` class.
 
+## Applications of Priority Queue
+
+A priority queue is a data structure that stores elements based on their priority and allows for efficient retrieval of the element with the highest or lowest priority. Priority queues find applications in various algorithms and scenarios where elements need to be processed in a particular order. Here are some common applications of priority queues:
+
+1. **Dijkstra's Shortest Path Algorithm:** In graph theory, Dijkstra's algorithm finds the shortest paths from a source vertex to all other vertices in a weighted graph. A priority queue is used to efficiently select the vertex with the smallest distance in each step.
+
+2. **Prim's Minimum Spanning Tree Algorithm:** This algorithm finds the minimum spanning tree of a connected, undirected graph. A priority queue is used to select the edge with the smallest weight in each iteration.
+
+3. **Heap Sort:** Heap sort is an efficient comparison-based sorting algorithm that uses a binary heap (a type of priority queue) to build the sorted array.
+
+4. **A* Search Algorithm:** A* is a pathfinding algorithm used in computer games and robotics to find the shortest path from a start node to a target node on a graph. A priority queue is used to explore nodes with the lowest estimated cost.
+
+5. **Task Scheduling:** Priority queues can be used to manage tasks or jobs in a scheduling system. Each task has a priority, and the queue ensures that tasks are executed in the order of their priority.
+
+6. **Huffman Coding:** Huffman coding is a data compression algorithm that assigns variable-length codes to characters based on their frequencies. A priority queue is used to construct the Huffman tree efficiently.
+
+7. **Event-driven Simulation:** In simulations, priority queues can be used to manage events that occur at different times. Events are processed in the order of their scheduled times.
+
+8. **Load Balancing:** In distributed systems, a priority queue can be used to distribute tasks or jobs among nodes based on their capacity and load.
+
+9. **Scheduling Algorithms:** Real-time systems and operating systems often use priority queues to schedule processes, threads, or tasks based on their priority levels.
+
+10. **Merge K Sorted Lists:** When merging multiple sorted lists into a single sorted list, a priority queue can efficiently manage the smallest element from each list.
+
+11. **Distributed Systems:** Priority queues are used in distributed systems to manage message queues or tasks that need to be processed across multiple nodes.
+
+Priority queues are implemented using various data structures, with binary heaps being a common choice due to their efficient insertion and extraction of the highest (or lowest) priority element. Different programming languages provide built-in implementations of priority queues, making it easier to incorporate them into your code.
+
 ---
 ## Snake and Ladders problem
 
@@ -296,8 +324,8 @@ These are some of the basic methods and usage patterns of the `PriorityQueue` cl
    > 1. Ladder gets a double chance
    > 2. 6 on a dice gets a double chance
 3. **IF MULTIPLAYER:**
->    1. Class snakes_ladders
->    2. Object attributes: Position, Dice (Initialized with a random function which throws a number between 1 to 6)
+   >1. Class snakes_ladders
+   >2. Object attributes: Position, Dice (Initialized with a random function which throws a number between 1 to 6)
 
 
 ```java
