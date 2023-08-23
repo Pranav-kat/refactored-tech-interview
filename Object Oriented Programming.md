@@ -209,4 +209,151 @@ Composition and inheritance are two different ways to achieve code reuse and bui
 
 In general, composition is preferred over inheritance due to its better encapsulation and flexibility. However, the choice between composition and inheritance depends on the specific design requirements and relationships between classes.
 
-I've answered your questions, and you can find the responses in a Markdown file format [here](sandbox:/composition_vs_inheritance.md).
+---
+## Stack Implementation
+```java
+class Stack {
+    private int maxSize;
+    private int[] stackArray;
+    private int top;
+
+    public Stack(int size) {
+        maxSize = size;
+        stackArray = new int[maxSize];
+        top = -1;
+    }
+
+    public void push(int value) {
+        if (top < maxSize - 1) {
+            stackArray[++top] = value;
+            System.out.println("Pushed: " + value);
+        } else {
+            System.out.println("Stack is full. Cannot push: " + value);
+        }
+    }
+
+    public int pop() {
+        if (top >= 0) {
+            int poppedValue = stackArray[top--];
+            System.out.println("Popped: " + poppedValue);
+            return poppedValue;
+        } else {
+            System.out.println("Stack is empty. Cannot pop.");
+            return -1; // Return a sentinel value
+        }
+    }
+
+    public int peek() {
+        if (top >= 0) {
+            System.out.println("Peeked: " + stackArray[top]);
+            return stackArray[top];
+        } else {
+            System.out.println("Stack is empty. Cannot peek.");
+            return -1; // Return a sentinel value
+        }
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == maxSize - 1;
+    }
+}
+
+public class StackExample {
+    public static void main(String[] args) {
+        Stack stack = new Stack(5);
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        stack.pop();
+        stack.peek();
+
+        System.out.println("Is stack empty? " + stack.isEmpty());
+        System.out.println("Is stack full? " + stack.isFull());
+    }
+}
+
+```
+---
+## Implement Queue
+```java
+class Queue {
+    private int maxSize;
+    private int[] queueArray;
+    private int front;
+    private int rear;
+    private int currentSize;
+
+    public Queue(int size) {
+        maxSize = size;
+        queueArray = new int[maxSize];
+        front = 0;
+        rear = -1;
+        currentSize = 0;
+    }
+
+    public void enqueue(int value) {
+        if (currentSize < maxSize) {
+            rear = (rear + 1) % maxSize;
+            queueArray[rear] = value;
+            currentSize++;
+            System.out.println("Enqueued: " + value);
+        } else {
+            System.out.println("Queue is full. Cannot enqueue: " + value);
+        }
+    }
+
+    public int dequeue() {
+        if (currentSize > 0) {
+            int dequeuedValue = queueArray[front];
+            front = (front + 1) % maxSize;
+            currentSize--;
+            System.out.println("Dequeued: " + dequeuedValue);
+            return dequeuedValue;
+        } else {
+            System.out.println("Queue is empty. Cannot dequeue.");
+            return -1; // Return a sentinel value
+        }
+    }
+
+    public int peek() {
+        if (currentSize > 0) {
+            System.out.println("Front value: " + queueArray[front]);
+            return queueArray[front];
+        } else {
+            System.out.println("Queue is empty. Cannot peek.");
+            return -1; // Return a sentinel value
+        }
+    }
+
+    public boolean isEmpty() {
+        return currentSize == 0;
+    }
+
+    public boolean isFull() {
+        return currentSize == maxSize;
+    }
+}
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue queue = new Queue(5);
+
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+
+        queue.dequeue();
+        queue.peek();
+
+        System.out.println("Is queue empty? " + queue.isEmpty());
+        System.out.println("Is queue full? " + queue.isFull());
+    }
+}
+
+```
